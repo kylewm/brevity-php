@@ -16,3 +16,64 @@ mb_internal_encoding('UTF-8');
 ```
 
 somewhere in my project.
+
+## Installation
+
+If you're using Composer, you can simply `composer require kylewm/brevity`.
+
+Otherwise, TODO
+
+## Usage
+
+### tweetLength($text)
+
+Find out how many characters a message will use on Twitter with
+`tweetLength()`:
+
+```php
+$brevity = new \Kylewm\Brevity();
+$length = $brevity->tweetLength('Published my first npm www.npmjs.com/package/brevity and composer packagist.org/packages/kylewm/brevity packages today!');
+echo $length;  // 99
+```
+
+This text is 119 characters but, due to t.co wrapping, will only use
+99 characters.
+
+### autolink($text)
+
+Convert URLs in plaintext to HTML links.
+
+```php
+$brevity = new \Kylewm\Brevity();
+$html = $brevity->autolink("I'm a big fan of https://en.wikipedia.org/wiki/Firefly_(TV_series) (and its creator https://en.wikipedia.org/wiki/Joss_Whedon)");
+echo $html;
+```
+
+Note that brevity handles parentheses and other punctuation as you'd
+expect.
+
+### shorten($text)
+
+The `shorten($text)` function takes a message of any length and
+shortens it to a Tweet-length 140 characters, adding an ellipsis at
+the end of it is truncated. It will not truncate a word or URL in the
+middle. Shorten takes a few *optional* parameters that change the way
+the tweet is formed. Any of these parameters can be `false`.
+
+- `$permalink` - included after the ellipsis if and only if the text
+  is shortened. Must be a URL or false.
+- `$shortpermalink` - included in parentheses at the end of tweets
+  that are not shortened. Must be a URL or false.
+- `$shortpermacitation` - included in parentheses at the end of tweets
+  that are not shortened. Must *not* be a URL, e.g. `ttk.me t4fT2`
+- `$formatAsTitle` - take the text as a title of a longer
+  article. Always formats as "Title: $permalink" or "Title…
+  $permalink" if shortened.
+
+```php
+$brevity = new \Kylewm\Brevity();
+$permalink = "https://kylewm.com/2016/01/brevity-shortens-notes";
+$longnote = "Brevity (github.com/kylewm/brevity-php) shortens notes that are too long to fit in a single tweet. It can also count characters to help you make sure your note won't need to be shortened!";
+$tweet = $brevity->shorten($longnote, $permalink);
+echo $tweet;
+```

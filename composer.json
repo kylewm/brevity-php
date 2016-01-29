@@ -13,8 +13,8 @@
     ],
     "require": {},
     "autoload": {
-        "psr-4": {
-            "Kylewm\\Brevity\\": "src/"
+        "psr-0": {
+            "Kylewm\\Brevity": "src/"
         }
     }
 }

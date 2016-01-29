@@ -6,8 +6,9 @@ class BrevityTest extends \PHPUnit_Framework_TestCase
 
     private static function getTestData()
     {
-        $testdata = json_decode(
-            file_get_contents(__DIR__ . '/../tests.json'), true);
+        $contents = file_get_contents(__DIR__ . '/../tests.json');
+        $contents = utf8_encode($contents);
+        $testdata = json_decode($contents, true);
         return $testdata;
     }
 

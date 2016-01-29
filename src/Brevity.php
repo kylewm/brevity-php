@@ -1,5 +1,5 @@
 <?php
-namespace Kylewm;
+namespace Kylewm\Brevity;
 
 class Brevity
 {

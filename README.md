@@ -31,7 +31,7 @@ Find out how many characters a message will use on Twitter with
 `tweetLength()`:
 
 ```php
-$brevity = new \Kylewm\Brevity();
+$brevity = new \Kylewm\Brevity\Brevity();
 $length = $brevity->tweetLength('Published my first npm www.npmjs.com/package/brevity and composer packagist.org/packages/kylewm/brevity packages today!');
 echo $length;  // 99
 ```
@@ -44,7 +44,7 @@ This text is 119 characters but, due to t.co wrapping, will only use
 Convert URLs in plaintext to HTML links.
 
 ```php
-$brevity = new \Kylewm\Brevity();
+$brevity = new \Kylewm\Brevity\Brevity();
 $html = $brevity->autolink("I'm a big fan of https://en.wikipedia.org/wiki/Firefly_(TV_series) (and its creator https://en.wikipedia.org/wiki/Joss_Whedon)");
 echo $html;
 ```
@@ -71,9 +71,14 @@ the tweet is formed. Any of these parameters can be `false`.
   $permalink" if shortened.
 
 ```php
-$brevity = new \Kylewm\Brevity();
+$brevity = new \Kylewm\Brevity\Brevity();
 $permalink = "https://kylewm.com/2016/01/brevity-shortens-notes";
 $longnote = "Brevity (github.com/kylewm/brevity-php) shortens notes that are too long to fit in a single tweet. It can also count characters to help you make sure your note won't need to be shortened!";
 $tweet = $brevity->shorten($longnote, $permalink);
 echo $tweet;
 ```
+
+## Changes
+
+- 0.2.5 - 2016-01-29: Changed namespace from Kylewm to Kylewm\Brevity
+  for better PSR-0 compatibility.

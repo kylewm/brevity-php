@@ -1,5 +1,5 @@
 <?php
-namespace Kylewm;
+namespace Kylewm\Brevity;
 
 mb_internal_encoding('UTF-8');
 

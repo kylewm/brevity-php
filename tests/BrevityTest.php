@@ -5,7 +5,6 @@ mb_internal_encoding('UTF-8');
 
 class BrevityTest extends \PHPUnit_Framework_TestCase
 {
-
     private static function getTestData()
     {
         $contents = file_get_contents(__DIR__ . '/../tests.json');
@@ -13,7 +12,6 @@ class BrevityTest extends \PHPUnit_Framework_TestCase
         $testdata = json_decode($contents, true);
         return $testdata;
     }
-
 
     function shortenProvider()
     {

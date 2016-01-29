@@ -7,3 +7,12 @@ acceptable tweet-length summary.
 
 This is a port of the Python module of the same name. Please refer to
 https://github.com/kylewm/brevity for documentation.
+
+Note that this module depends on the `mb_` string methods to be
+available. I get the best results by setting
+
+```php
+mb_internal_encoding('UTF-8');
+```
+
+somewhere in my project.

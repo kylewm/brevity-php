@@ -1,6 +1,8 @@
 <?php
 namespace Kylewm;
 
+mb_internal_encoding('UTF-8');
+
 class BrevityTest extends \PHPUnit_Framework_TestCase
 {
 

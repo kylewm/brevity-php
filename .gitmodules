@@ -1,3 +1,3 @@
-[submodule "brevity-tests"]
+[submodule "brevity-testcases"]
 	path = testcases
-	url = git@github.com:kylewm/brevity-tests.git
+	url = git@github.com:kylewm/brevity-testcases.git

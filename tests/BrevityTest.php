@@ -7,7 +7,7 @@ class BrevityTest extends \PHPUnit_Framework_TestCase
 {
     private static function getTestData()
     {
-        $contents = file_get_contents(__DIR__ . '/../tests.json');
+        $contents = file_get_contents(__DIR__ . '/../testcases/tests.json');
         $contents = utf8_encode($contents);
         $testdata = json_decode($contents, true);
         return $testdata;
@@ -43,7 +43,7 @@ class BrevityTest extends \PHPUnit_Framework_TestCase
             isset($testcase['permalink']) ? $testcase['permalink'] : false,
             isset($testcase['permashortlink']) ? $testcase['permashortlink'] : false,
             isset($testcase['permashortcitation']) ? $testcase['permashortcitation'] : false,
-            isset($testcase['format_as_title']) ? $testcase['format_as_title'] : false);
+            isset($testcase['format']) ? $testcase['format'] : Brevity::FORMAT_NOTE);
         $this->assertEquals($testcase['expected'], $result);
     }
 

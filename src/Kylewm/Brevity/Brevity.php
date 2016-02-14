@@ -189,7 +189,7 @@ class Brevity
 
         $targetLength = $this->targetLength;
         if ($format == self::FORMAT_NOTE_WITH_MEDIA) {
-            $targetLength -= 24; // 23 characters + a space
+            $targetLength -= $this->linkLength + 1; // 23 characters + a space
         }
 
         $baseLength = $this->totalLength($tokens);

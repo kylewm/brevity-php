@@ -80,5 +80,6 @@ echo $tweet;
 
 ## Changes
 
+- 0.2.8 - 2016-04-19: Support article+media format
 - 0.2.5 - 2016-01-29: Changed namespace from Kylewm to Kylewm\Brevity
   for better PSR-0 compatibility.

@@ -67,8 +67,8 @@ class Brevity
                 --$jj;
                 $links[$ii] = substr($link, 0, $jj+1);
                 $splits[$ii+1] = substr($link, $jj+1) . $splits[$ii+1];
+                $link = $links[$ii];
             }
-            $link = $links[$ii];
 
             // avoid double linking by looking at preceeding 2 chars
             $prevText = $splits[$ii];

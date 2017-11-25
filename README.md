@@ -79,7 +79,8 @@ echo $tweet;
 ```
 
 ## Changes
-
+- 0.2.9 - 2017-11-25: Account for 280 character limit and multi-byte character
+  weights. Also backports some fixes from the python library.
 - 0.2.8 - 2016-04-19: Support article+media format
 - 0.2.5 - 2016-01-29: Changed namespace from Kylewm to Kylewm\Brevity
   for better PSR-0 compatibility.

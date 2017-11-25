@@ -55,7 +55,7 @@ expect.
 ### shorten($text)
 
 The `shorten($text)` function takes a message of any length and
-shortens it to a Tweet-length 140 characters, adding an ellipsis at
+shortens it to a Tweet-length of 280 characters, adding an ellipsis at
 the end of it is truncated. It will not truncate a word or URL in the
 middle. Shorten takes a few *optional* parameters that change the way
 the tweet is formed. Any of these parameters can be `false`.
